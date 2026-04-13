@@ -1,0 +1,4 @@
+#!/bin/sh
+set -eo pipefail
+
+pg_isready -U "$POSTGRES_USER" -d "$POSTGRES_DB" || exit 1
