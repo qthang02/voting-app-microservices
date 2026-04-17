@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-configs
+  namespace: prod
+data:
+  REDIS_HOST: my-redis-master
+  REDIS_PORT: "6379"
+  POSTGRES_HOST: my-postgresql
+  POSTGRES_PORT: "5432"
+  POSTGRES_DB: postgres
+  OPTION_A: Cats
+  OPTION_B: Dogs
+  VOTE_PORT: "80"
+  RESULT_PORT: "80"
+  WORKER_HEALTH_PORT: "80"
