@@ -1,4 +1,4 @@
-# 🗳️ Voting App Microservice
+# 🗳️ Voting App Microservices
 
 Ứng dụng bình chọn theo kiến trúc microservice, được containerize hoàn toàn bằng Docker. Người dùng vote qua giao diện web, kết quả được xử lý bất đồng bộ qua hàng đợi Redis và hiển thị real-time trên trang kết quả.
 
@@ -14,18 +14,18 @@
               ┌────────────┼────────────┐
               │ front-tier network      │
               │            │            │
-        ┌─────▼─────┐ ┌───▼──────┐     │
-        │   Vote    │ │  Result  │     │
-        │ (Flask)   │ │(Express) │     │
-        │ :8080     │ │ :8081    │     │
-        └─────┬─────┘ └────┬─────┘     │
+        ┌─────▼─────┐ ┌───▼──────┐      │
+        │   Vote    │ │  Result  │      │
+        │ (Flask)   │ │(Express) │      │
+        │ :8080     │ │ :8081    │      │
+        └─────┬─────┘ └────┬─────┘      │
               │             │           │
               │ back-tier network       │
               │             │           │
-        ┌─────▼─────┐ ┌────▼─────┐     │
-        │   Redis   │ │ Postgres │     │
-        │  (queue)  │ │  (store) │     │
-        └─────┬─────┘ └────▲─────┘     │
+        ┌─────▼─────┐ ┌────▼─────┐      │
+        │   Redis   │ │ Postgres │      │
+        │  (queue)  │ │  (store) │      │
+        └─────┬─────┘ └────▲─────┘      │
               │             │           │
         ┌─────▼─────────────┘           │
         │   Worker  │                   │
